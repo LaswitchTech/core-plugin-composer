@@ -159,7 +159,7 @@ class ComposerHelper extends Helper {
             chdir(dirname($this->Config->root() . DIRECTORY_SEPARATOR . 'composer'));
 
             // Install dependencies using Composer
-            $command = PHP_BINDIR . DIRECTORY_SEPARATOR . 'php ' . escapeshellarg(basename($this->Config->root() . DIRECTORY_SEPARATOR . 'composer')) . ' install --no-interaction';
+            $command = PHP_BINDIR . DIRECTORY_SEPARATOR . 'php ' . escapeshellarg(basename($this->Config->root() . DIRECTORY_SEPARATOR . 'composer')) . ' install --no-dev --prefer-dist --no-interaction';
             $this->Log->debug('Running command: ' . $command);
             exec($command, $output, $exitCode);
             if(is_array($output)){
